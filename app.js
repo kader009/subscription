@@ -5,7 +5,6 @@ import authRouter from './routes/auth.routes.js';
 import userRouter from './routes/user.routes.js';
 import connectToDatabase from './database/mongodb.js';
 
-
 app.use('/api/v1/auth', authRouter);
 app.use('/api/v1/users', userRouter);
 
