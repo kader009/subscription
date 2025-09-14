@@ -1,26 +1,26 @@
-import { Router } from "express";
+import { Router } from 'express';
+import { getUser, getUsers } from '../controllers/user.controllers.js';
+import authorize from '../middleware/auth.middleware.js';
 
 const userRouter = Router();
 
-userRouter.get("/", (req, res) => {
-  // Handle fetching user logic here
-  res.send("User endpoint");
-});
-userRouter.get("/:id", (req, res) => {
-  // Handle fetching user logic here
-  res.send("User endpoint");
-});
-userRouter.post("/", (req, res) => {
+userRouter.get('/', getUsers);
+
+userRouter.get('/:id', authorize, getUser);
+
+userRouter.post('/', (req, res) => {
   // Handle updating user logic here
-  res.send("User endpoint");
+  res.send('User endpoint');
 });
-userRouter.put("/:id", (req, res) => {
+
+userRouter.put('/:id', (req, res) => {
   // Handle updating user logic here
-  res.send("User endpoint");
+  res.send('User endpoint');
 });
-userRouter.delete("/:id", (req, res) => {
+
+userRouter.delete('/:id', (req, res) => {
   // Handle deleting user logic here
-  res.send("User endpoint");
+  res.send('User endpoint');
 });
 
 export default userRouter;
