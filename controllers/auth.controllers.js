@@ -5,6 +5,7 @@ import jwt from 'jsonwebtoken';
 import { JWT_SECRET } from '../config/index.js';
 
 export const signUp = async (req, res, next) => {
+  // sessio here
   const session = await mongoose.startSession();
   session.startTransaction();
 
